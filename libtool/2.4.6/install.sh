@@ -18,7 +18,7 @@ VERSION=${NAME}-${NUMBER_VERSION}
 FILE=${VERSION}.tar.gz
 TOP_DIR=/data/apps/${NAME}
 PREFIX=${TOP_DIR}/${NUMBER_VERSION}
-DOWNLOAD_LINK="http://ftpmirror.gnu.org/libtool/${FILE}"
+DOWNLOAD_LINK="http://ftpmirror.gnu.org/${NAME}/${FILE}"
 
 # Dados para gerar o module file
 MODULE_NAME="${NAME}"

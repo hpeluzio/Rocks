@@ -18,7 +18,7 @@ VERSION=${NAME}-${NUMBER_VERSION}
 FILE=${VERSION}.tar.gz
 TOP_DIR=/data/apps/${NAME}
 PREFIX=${TOP_DIR}/${NUMBER_VERSION}
-DOWNLOAD_LINK="http://ftp.gnu.org/gnu/gawk/${FILE}"
+DOWNLOAD_LINK="http://ftp.gnu.org/gnu/${NAME}/${FILE}"
 #http://ftp.gnu.org/gnu/gawk/gawk-4.1.1.tar.gz
 
 # Dados para gerar o module file

@@ -18,7 +18,7 @@ VERSION=${NAME}-${NUMBER_VERSION}
 FILE=${VERSION}.tar.gz
 TOP_DIR=/data/apps/${NAME}
 PREFIX=${TOP_DIR}/${NUMBER_VERSION}
-DOWNLOAD_LINK="http://ftp.gnu.org/gnu/m4/${FILE}"
+DOWNLOAD_LINK="http://ftp.gnu.org/gnu/${NAME}/${FILE}"
 
 # Dados para gerar o module file
 MODULE_NAME="${NAME}"

@@ -12,14 +12,14 @@ export LUSER="root"
 export LGROUP="root"
 
 # Dados para a instalacao do software
-NAME=autoconf
-NUMBER_VERSION=2.68
+NAME=cloog
+NUMBER_VERSION=0.18.1
 VERSION=${NAME}-${NUMBER_VERSION}
 FILE=${VERSION}.tar.gz
 TOP_DIR=/data/apps/${NAME}
 PREFIX=${TOP_DIR}/${NUMBER_VERSION}
-DOWNLOAD_LINK="http://ftp.gnu.org/gnu/${NAME}/${FILE}"
-
+DOWNLOAD_LINK="http://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.1.tar.gz"
+#https://gcc.gnu.org/pub/gcc/infrastructure/cloog-0.18.1.tar.gz
 
 # Dados para gerar o module file
 MODULE_NAME="${NAME}"
@@ -40,6 +40,7 @@ then
     sudo mkdir -p "${SOURCE_DIR}" || exit 1
     sudo chown -R $LUSER:$LGROUP "${SOURCE_DIR}" || exit 1
 fi
+
 
 #
 # Create TOP_DIR/NUMBER_VERSION directory
@@ -67,8 +68,10 @@ fi
 # Load modules
 #
 source /etc/profile.d/modules.sh	|| exit 1
-module load gcc/4.8.3
-module load m4/1.4.17
+#module load gcc/4.8.3	|| exit 1
+#module load autoconf/2.68	|| exit 1
+#module load gawk/4.1.1	|| exit 13
+module load gmp/6.1.2	|| exit 13
 
 #
 # Install
@@ -76,6 +79,7 @@ module load m4/1.4.17
 cd "${SOURCE_DIR}/${VERSION}" || exit 1
 ./configure --prefix=${PREFIX} || exit 1
 make -j8 || exit 1
+#make check || exit 1
 sudo make install || exit 1
 
 echo "=============================================="
