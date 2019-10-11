@@ -68,6 +68,14 @@ fi
 # Load modules
 #
 source /etc/profile.d/modules.sh	|| exit 1
+
+module load gmp/5.1.3	|| exit 1
+module load mpfr/3.1.3	|| exit 1
+module load mpc/1.0.3	|| exit 1
+module load isl/0.12.2	|| exit 1
+module load cloog/0.18.1	|| exit 1
+#cloog/0.18.1    3) gcc/4.8.3       4) mpc/1.0.3       5) mpfr/3.1.3      6) gmp/5.1.3
+
 module load gcc/4.8.3	|| exit 1
 module load autoconf/2.68	|| exit 1
 #module load gawk/4.1.1	|| exit 13
