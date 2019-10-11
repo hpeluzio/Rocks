@@ -1,0 +1,20 @@
+module purge
+module load rocks-openmpi
+module load gawk/4.1.4 autoconf/2.69
+
+mkdir -p /data/src/automake/1.16.1/
+cd /data/src/automake/1.16.1/
+wget http://ftp.gnu.org/gnu/automake/automake-1.16.1.tar.gz
+tar xzf automake-1.16.1.tar.gz 
+cd /data/src/automake/1.16.1/automake-1.16.1
+
+mkdir -p /data/apps/automake/
+mkdir -p /data/apps/automake/1.16.1/
+
+./configure --prefix=/data/apps/automake/1.16.1
+make -j16
+make install
+
+ls /data/apps/automake/1.16.1/
+
+/bin/bash /data/svn/softwares/trunk/utils/genmod.sh -n automake -v 1.16.1
